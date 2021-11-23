@@ -6,9 +6,11 @@ name: Project Test
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,10 +28,10 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Set up Python 3.7
+      - name: Set up Python 3.6
         uses: actions/setup-python@v1
         with:
-          python-version: 3.7
+          python-version: 3.6
       - name: Install dependencies
         run: |
           python3 -m pip3 install --upgrade pip

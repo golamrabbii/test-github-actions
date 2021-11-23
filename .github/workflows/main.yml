@@ -33,5 +33,6 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip3 install --upgrade pip
+          pip3 install pytest
       - name: Test with pytest
         run: pytest -vv

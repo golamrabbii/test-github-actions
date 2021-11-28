@@ -39,9 +39,10 @@ jobs:
       - name: Test with pytest
         run: pytest -vv
       - name: Slack Notification
+        uses: lazy-actions/slatify@master
         if: always()
         with:
           type: ${{ job.status }}
           job_name: '*Test*'
           channel: '#action-test'
-          url: https://hooks.slack.com/services/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
+          url: ${{ secrets.SLACK_WEBHOOK }}
